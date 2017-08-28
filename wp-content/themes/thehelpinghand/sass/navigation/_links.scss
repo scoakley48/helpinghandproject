@@ -1,0 +1,26 @@
+a {
+	color: $color__link;
+
+
+	&:hover,
+	&:focus,
+
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+.button{
+	color: #fff;
+	text-decoration: none;
+	background: #E7333E;
+	padding: 12px 35px;
+	&:hover{
+		color: #222529;
+		background: #fff;
+	}
+}

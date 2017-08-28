@@ -1,0 +1,45 @@
+//THREE COLUMN TEXT SECTION
+section.three_column_text{
+  margin: 35px 0;
+  .container{
+    width: 90%;
+    margin: 0 auto;
+    .three-col{
+      width: 33.33%;
+      float:left;
+      display: block;
+      .text-container {
+        width: 70%;
+        text-align: center;
+        margin: 0 auto;
+        h4{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+section.imageleft-text{
+  .half{
+    width: 50%;
+    float: left;
+    height: 500px;
+  }
+    .image-holder{
+      background-size: cover;
+
+    }
+    .text-holder{
+      .text-container{
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        .middle{
+          h4{
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }

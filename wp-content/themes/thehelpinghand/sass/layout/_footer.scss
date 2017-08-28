@@ -1,0 +1,61 @@
+footer{
+  background-image: url('/wp-content/themes/tribe/images/tribe_footer_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  .container{
+    width: 900px;
+    margin: 50px auto;
+    .top-footer{
+      height: 225px;
+      width: 100%;
+      float: left;
+      color: #fff;
+      font-weight: 100;
+      letter-spacing: 1px;
+      .site-info{
+        float: left;
+        width: 450px;
+        p{
+          font-size: 12px;
+          line-height: 25px;
+        }
+        a{
+          img{
+            width: 50%;
+          }
+        }
+      }
+      .footer_contact{
+        text-align: right;
+        float: right;
+        h4{
+          letter-spacing: 5px;
+          font-weight: 300;
+          margin-bottom: 35px;
+        }
+        p{
+          font-size: 12px;
+          margin-bottom: 0px;
+          margin-top: 8px;
+        }
+        a{
+          color: #fff;
+          font-size: 12px;
+          text-decoration: none;
+        }
+      }
+    }
+    .bottom-footer{
+      width: 100%;
+      float: left;
+      border-top: 1px solid;
+      padding:20px 0;
+      p{
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
