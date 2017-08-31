@@ -35,6 +35,7 @@
  														<?php if($icon) : ?>
  																<img src="<?php echo $icon['url']; ?>" <?php if(get_sub_field('max_height_on_image')) : ?>style="max-height:<?php the_sub_field('max_height_on_image'); ?>px;"<?php endif; ?> />
  														<?php endif; ?>
+                            <h4 class="subtitle">Helping Hand Project at</h4>
  														<?php if(get_sub_field('headline')) : ?>
  																<h1 class="title"><?php the_sub_field('headline'); ?></h1>
  														<?php endif; ?>
@@ -51,6 +52,20 @@
  												<?php } ?>
  										</div>
  								</section>
+              <?php elseif (get_row_layout() == 'call_to_action' ): ?>
+                  <section class="call_to_action">
+                      <div class="container">
+                        <div class="left_text_container">
+                          <h2><?php the_sub_field('headline'); ?></h2>
+                          <p><?php the_sub_field('text'); ?></p>
+                        </div>
+                        <div class="button_container">
+                          <?php if(get_sub_field('button_url')) { ?>
+                              <a href="<?php the_sub_field('button_url'); ?>" class="btn"><?php the_sub_field('button_text'); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                          <?php } ?>
+                        </div>
+                      </div>
+                  </section>
  						<?php elseif (get_row_layout() == 'contact_form' ): ?>
  								<section class="contact_form">
  										<div class="container">
@@ -120,7 +135,7 @@
  														<a href="<?php the_sub_field('image_url'); ?>" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>></a>
  												<?php } ?>
  										</div>
- 										<div class="text-holder half">
+ 										<div class="text-holder half" style="background-color:<?php the_sub_field('background_color'); ?>;">
  												<div class="text-container">
  														<div class="middle">
  																<h2 class="title"><?php the_sub_field('headline'); ?></h2>

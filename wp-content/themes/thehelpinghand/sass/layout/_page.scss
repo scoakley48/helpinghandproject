@@ -297,3 +297,62 @@ section.contact_form{
     }
   }
 }
+
+section.intro-header.center-text{
+  float: left;
+  display: block;
+  width: 100%;
+  padding: 25px 0;
+  .text-container{
+    text-align: center;
+    width: 530px;
+    margin: 0 auto;
+    .middle{
+      h4.subtitle{
+        font-style: italic;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin: 0;
+        margin-top: 20px;
+      }
+      h1{
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+section.call_to_action{
+  float: left;
+  display: block;
+  background-color: #34283D;
+  width: 100%;
+  .container{
+    width: 80%;
+    display: table;
+    margin: 30px auto;
+    color: #fff;
+    .left_text_container{
+      width: 100%;
+      float: left;
+      display: block;
+      margin-right: 20px;
+    }
+    .button_container{
+      display: table-cell;
+      vertical-align: middle;
+      width: 40%;
+      a.btn{
+        width: 270px;
+        border: 3px solid #fff;
+        color: #fff;
+        &:hover{
+          color: #34283D;
+          background: #fff;
+        }
+      }
+    }
+  }
+}

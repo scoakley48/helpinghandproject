@@ -321,7 +321,8 @@ h2, h3, h4, h5, h6 {
 /* line 6, sass/typography/_headings.scss */
 h1 {
   font-family: 'Raleway', sans-serif;
-  font-size: 80px;
+  font-size: 40px;
+  line-height: 45px;
 }
 
 /* line 1, sass/typography/_copy.scss */
@@ -1374,6 +1375,73 @@ section.contact_form .container .right-contact-col .wpcf7 form .col-half span.wp
 /* line 290, sass/layout/_page.scss */
 section.contact_form .container .right-contact-col .wpcf7 form .col-full span.wpcf7-form-control-wrap input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-email {
   width: 100%;
+}
+
+/* line 301, sass/layout/_page.scss */
+section.intro-header.center-text {
+  float: left;
+  display: block;
+  width: 100%;
+  padding: 25px 0;
+}
+/* line 306, sass/layout/_page.scss */
+section.intro-header.center-text .text-container {
+  text-align: center;
+  width: 530px;
+  margin: 0 auto;
+}
+/* line 311, sass/layout/_page.scss */
+section.intro-header.center-text .text-container .middle h4.subtitle {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-top: 20px;
+}
+/* line 319, sass/layout/_page.scss */
+section.intro-header.center-text .text-container .middle h1 {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* line 327, sass/layout/_page.scss */
+section.call_to_action {
+  float: left;
+  display: block;
+  background-color: #34283D;
+  width: 100%;
+}
+/* line 332, sass/layout/_page.scss */
+section.call_to_action .container {
+  width: 80%;
+  display: table;
+  margin: 30px auto;
+  color: #fff;
+}
+/* line 337, sass/layout/_page.scss */
+section.call_to_action .container .left_text_container {
+  width: 100%;
+  float: left;
+  display: block;
+  margin-right: 20px;
+}
+/* line 343, sass/layout/_page.scss */
+section.call_to_action .container .button_container {
+  display: table-cell;
+  vertical-align: middle;
+  width: 40%;
+}
+/* line 347, sass/layout/_page.scss */
+section.call_to_action .container .button_container a.btn {
+  width: 270px;
+  border: 3px solid #fff;
+  color: #fff;
+}
+/* line 351, sass/layout/_page.scss */
+section.call_to_action .container .button_container a.btn:hover {
+  color: #34283D;
+  background: #fff;
 }
 
 /* line 1, sass/layout/_footer.scss */
