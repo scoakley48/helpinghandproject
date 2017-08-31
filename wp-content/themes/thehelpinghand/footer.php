@@ -12,23 +12,41 @@
 ?>
 
 	</div><!-- #content -->
-
+	<div class="prefooter">
+		<div class="container">
+			<h1>FUND A CHILD'S <span>FUTURE</span></h1>
+			<a href="#" class="button">DONATE</a>
+		</div>
+	</div>
 	<footer id="colophon" class="site-footer">
 		<div class="container">
+				<div class="hhp_signup">
+					<h2>LEND A HAND <span>THE HELPING HAND PROJECT</span></h2>
+					<a href="/donate" class="button">GET A DEVICE</a>
+				</div>
 				<div class="top-footer">
 						<div class="site-info">
-							<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://tribestudiosouthbeach.dev/wp-content/themes/tribe/images/tribe_footer.png"></a>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-						</div><!-- .site-info -->
+							<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://helpinghandproject.dev/wp-content/themes/thehelpinghand/images/helpinghand_footerlogo.png"></a>
+						</div>
 						<div class="footer_contact">
-							<h4>GET IN TOUCH</h4>
-							<p>+1 (704) 123 4567</p>
-							<p><a href="mailto:info@tribestudiosouthbeach.com" target="_top">info@tribestudiosouthbeach.com</a></p>
-							<p>1234 W. Broadway Ave, South Beach, FL 12345</p>
+							<p><strong>The Helping Hand Project</strong><p>
+							1234 Hill Street<br>
+							Chapel Hill, NC 27516<br>
+							<a href="mailto:contact@hhp.com" target="_top">contact@hhp.com</a><br>
+							Phone: 704-123-4567<br>
+							<div class="social-icons">
+								<i class="fa fa-facebook" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-youtube" aria-hidden="true"></i>
+							</div>
+					</div>
+					<div class="left-footer-info">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					</div>
+					<div class="right-footer-info">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 					</div>
 				</div>
 			<div class="bottom-footer">
-				<p>TRIBE STUDIO © 2017 ALL RIGHTS RESERVED</p>
+				<p>© 2017 HELPING HAND PROJECT. ALL RIGHTS RESERVED</p>
 				<div class="social-icons">
 				</div>
 			</div>

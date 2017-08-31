@@ -1,48 +1,121 @@
+.prefooter{
+  background-image: url(/wp-content/themes/thehelpinghand/images/helpinghand_prefooter.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  .container{
+    margin: 0 auto;
+    text-align: center;
+    padding: 70px 0;
+    h1{
+      margin: 0;
+      color: #fff;
+      font-size: 40px;
+      letter-spacing: 2px;
+      font-weight: 300;
+      margin-bottom: 15px;
+      span{
+        font-weight: 700;
+      }
+    }
+    .button{
+      background: #34283D;
+      transition:all 0.3s ease;
+      border-radius: 8px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding:12px 50px;
+      &:hover{
+        background: #fff;
+        transition:all 0.3s ease;
+      }
+    }
+  }
+}
 footer{
-  background-image: url('/wp-content/themes/tribe/images/tribe_footer_bg.png');
+  background-image: url('/wp-content/themes/thehelpinghand/images/helpinghand_footer.png');
   background-size: cover;
   background-repeat: no-repeat;
   .container{
-    width: 900px;
-    margin: 50px auto;
+    width: 85%;
+    max-width: 1170px;
+    margin: 35px auto;
+    .hhp_signup{
+      height: 125px;
+      border-bottom: 2px solid;
+      h2{
+        font-size: 30px;
+        float: left;
+        display: block;
+        color: #5D6065;
+        span{
+          color: #fff;
+        }
+      }
+      a.button{
+        float: right;
+        margin: 25px;
+        background: #5D6065;
+        border-radius: 8px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding:12px 50px;
+        transition:all 0.3s ease;
+        &:hover{
+          background: #fff;
+          transition:all 0.3s ease;
+          font-weight: 500;
+        }
+      }
+    }
     .top-footer{
       height: 225px;
       width: 100%;
       float: left;
       color: #fff;
       font-weight: 100;
+      margin-top: 25px;
       letter-spacing: 1px;
+      p{
+        font-size: 12px;
+        margin-bottom: 0px;
+        margin-top: 8px;
+        line-height: 25px;
+      }
       .site-info{
         float: left;
-        width: 450px;
-        p{
-          font-size: 12px;
-          line-height: 25px;
-        }
+        width: 25%;
         a{
           img{
-            width: 50%;
+            width: 120px;
           }
         }
       }
       .footer_contact{
-        text-align: right;
-        float: right;
-        h4{
-          letter-spacing: 5px;
-          font-weight: 300;
-          margin-bottom: 35px;
-        }
-        p{
-          font-size: 12px;
-          margin-bottom: 0px;
-          margin-top: 8px;
+        width: 25%;
+        float: left;
+        .social-icons{
+          i{
+            font-size: 20px;
+            margin-right: 20px;
+            margin-top: 15px;
+          }
         }
         a{
           color: #fff;
           font-size: 12px;
           text-decoration: none;
         }
+      }
+      .left-footer-info{
+        float: left;
+        width: 25%;
+        padding: 0 25px;
+      }
+      .right-footer-info{
+        float: left;
+        width: 25%;
+        padding: 0 25px;
       }
     }
     .bottom-footer{

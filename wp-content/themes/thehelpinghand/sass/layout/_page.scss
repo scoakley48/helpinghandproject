@@ -1,8 +1,11 @@
 //THREE COLUMN TEXT SECTION
 section.three_column_text{
-  margin: 35px 0;
+  margin: 60px 0;
+  display: block;
+  float: left;
+  width: 100%;
   .container{
-    width: 90%;
+    max-width: 1170px;
     margin: 0 auto;
     .three-col{
       width: 33.33%;
@@ -14,12 +17,20 @@ section.three_column_text{
         margin: 0 auto;
         h4{
           margin-bottom: 0;
+          font-size: 20px;
+          letter-spacing: 1px;
+          font-weight: 600;
+        }
+        p{
+          font-weight: 300;
+          letter-spacing: 1px;
         }
       }
     }
   }
 }
 
+//IMAGE LEFT TEXT RIGHT
 section.imageleft-text{
   .half{
     width: 50%;
@@ -31,15 +42,223 @@ section.imageleft-text{
 
     }
     .text-holder{
+       display: table;
       .text-container{
-        width: 400px;
+        display: table-cell;
         margin: 0 auto;
         text-align: center;
+        color: #222529;
+        vertical-align: middle;
         .middle{
-          h4{
-            text-transform: uppercase;
+          margin: 0 auto;
+          width: 70%;
+          p{
+            font-weight: 300;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-bottom: 20px;
           }
         }
       }
     }
   }
+
+//IMAGE RIGHT TEXT LEFT
+  section.imageright-text{
+    height: 500px;
+    background: #F5F7F9;
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+    .container{
+      width: 80%;
+      margin: 0 auto;
+      padding: 65px 0;
+      position: relative;
+      display: flex;
+      &:before{
+        content: '';
+        background-image: url(../tribe/images/tribe_logo_red.png);
+        display: block;
+        position: absolute;
+        height: 125px;
+        width: 125px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        left: 837px;
+        top: 2px;
+      }
+      .half{
+        width: 50%;
+        float: left;
+        height: 375px;
+      }
+        .image-holder{
+          background-size: cover;
+        }
+        .text-holder{
+          display: flex;
+          margin-right: 30px;
+          .text-container{
+            width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            color: #222529;
+            .middle{
+              h2{
+                margin-bottom: 0;
+              }
+              h3{
+                margin: 0;
+              }
+              p{
+                font-weight: 300;
+                margin-top: 5px;
+                letter-spacing: 1px;
+                font-size: 15px;
+                margin-bottom: 20px;
+              }
+              .social-icons{
+                i{
+                  margin-right: 20px;
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+//TEXTAREA
+section.textarea{
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  background: #F5F7F9;
+  text-align: center;
+  padding: 50px 0;
+  .container{
+
+  }
+}
+
+//FULL WIDTH IMAGE
+section.full_width_image{
+  display: block;
+  width: 100%;
+  float: left;
+  line-height: 0;
+}
+
+
+
+//CONTACT FORM
+section.contact_form{
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  .container{
+    width: 950px;
+    margin: 0 auto;
+    .left-contact-col{
+      width: 50%;
+      float: left;
+      display: block;
+      padding: 20px;
+      p{
+        margin-bottom: 45px;
+      }
+      .interior-col{
+        float: left;
+        width: 50%;
+        h4{
+          border-top:3px solid;
+          width: 80px;
+          padding-top: 20px;
+        }
+        p{
+          color: #A3A3A3;
+          font-weight: 400;
+        }
+      }
+    }
+    .right-contact-col{
+      width: 50%;
+      float: left;
+      display: block;
+      padding: 40px;
+      .wpcf7{
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #A3A3A3;
+        font-family: "brandon-grotesque", sans-serif;
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding-left: 5px;
+        }
+        input[type="text"], input[type="email"]{
+          background: #EDEDED;
+          border: none;
+          border-radius: 0;
+          margin: 0px 18px 18px 0;
+          color: #000;
+          font-family: "brandon-grotesque", sans-serif;
+          padding-left: 5px;
+          height: 40px;
+        }
+         textarea{
+           background: #EDEDED;
+           border: none;
+           border-radius: 0;
+           margin: 0px 18px 18px 0;
+           color: #000;
+           font-family: "brandon-grotesque", sans-serif;
+           padding-left: 5px;
+           height: 155px;
+           padding-top: 10px;
+         }
+         input[type="submit"]{
+           float: right;
+           color: #fff;
+           text-decoration: none;
+           background: #E7333E;
+           padding: 12px 35px;
+           font-weight: 700;
+           letter-spacing: 1px;
+           border-radius: 0;
+           border: none;
+           font-family: "brandon-grotesque", sans-serif;
+           &:hover{
+             background: #222529;
+             transition: all 0.3s ease;
+           }
+         }
+         div.wpcf7-mail-sent-ok{
+           border: none;
+           font-family: "brandon-grotesque", sans-serif;
+         }
+        form{
+          .col-half{
+            span.wpcf7-form-control-wrap{
+              input.wpcf7-form-control.wpcf7-text{
+                width: 45%;
+                float: left;
+              }
+            }
+          }
+          .col-full{
+            span.wpcf7-form-control-wrap{
+              input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-email{
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
