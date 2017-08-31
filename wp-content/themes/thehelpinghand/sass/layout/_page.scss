@@ -30,8 +30,44 @@ section.three_column_text{
   }
 }
 
+//IMAGE RIGHT TEXT LEFT
+section.imageright-textleft-fw{
+  float: left;
+  display: block;
+  .half{
+    width: 50%;
+    float: left;
+    height: 500px;
+  }
+  .image-holder{
+    background-size: cover;
+  }
+  .text-holder{
+     display: table;
+    .text-container{
+      display: table-cell;
+      margin: 0 auto;
+      text-align: center;
+      color: #222529;
+      vertical-align: middle;
+      .middle{
+        margin: 0 auto;
+        width: 70%;
+        p{
+          font-weight: 300;
+          margin-top: 5px;
+          letter-spacing: 1px;
+          font-size: 15px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
 //IMAGE LEFT TEXT RIGHT
 section.imageleft-text{
+  float: left;
+  display: block;
   .half{
     width: 50%;
     float: left;
@@ -39,7 +75,6 @@ section.imageleft-text{
   }
     .image-holder{
       background-size: cover;
-
     }
     .text-holder{
        display: table;

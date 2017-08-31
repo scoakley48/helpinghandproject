@@ -111,7 +111,6 @@
  												</div>
  										</div>
  								</section>
-
  						<?php elseif (get_row_layout() == 'image_left_text_right_block' ): ?>
  								<section class="imageleft-text <?php if(get_sub_field('global')) { ?>global<?php } ?>">
  										<?php $background_image = get_sub_field('image'); ?>
@@ -133,6 +132,27 @@
  												</div>
  										</div>
  								</section>
+						<?php elseif (get_row_layout() == 'image_right_text_left_block_fw' ): ?>
+							<section class="imageright-textleft-fw">
+								<div class="text-holder half">
+										<div class="text-container">
+												<div class="middle">
+														<h2 class="title"><?php the_sub_field('headline'); ?></h2>
+														<p><?php the_sub_field('text'); ?></p>
+														<?php if(get_sub_field('button_url')) { ?>
+																<a href="<?php the_sub_field('button_url'); ?>" class="btn"><?php the_sub_field('button_text'); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+														<?php } ?>
+												</div>
+										</div>
+								</div>
+								<?php $background_image = get_sub_field('image'); ?>
+								<div class="image-holder half" style="background-image:url(<?php echo $background_image['url']; ?>);">
+										<?php if(get_sub_field('image_url')) { ?>
+												<?php $featured_image = get_sub_field(''); ?>
+												<a href="<?php the_sub_field('image_url'); ?>" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>></a>
+										<?php } ?>
+								</div>
+						  </section>
  						<?php elseif (get_row_layout() == 'image_right_text_left_block' ): ?>
  								<section class="imageright-text">
  													<div class="block edge--top--reverse">
@@ -359,7 +379,7 @@
  												<?php endwhile; ?> <!-- block collection while -->
  										</section>
  								<?php endif; ?> <!-- block collection if -->
-
+							</div>
  						<?php endif; ?>
  				<?php endwhile; ?>
  		<?php endif; ?>
