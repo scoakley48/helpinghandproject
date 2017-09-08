@@ -19,6 +19,10 @@
  									<?php if(get_sub_field('background_image')) : ?>style="background-image:url(<?php echo $background_image['url']; ?>);"<?php endif; ?>>
  										<div class="text-container">
  												<div class="middle">
+                          <?php $icon = get_sub_field('icon'); ?>
+                          <?php if($icon) : ?>
+                              <img src="<?php echo $icon['url']; ?>" <?php if(get_sub_field('max_height_on_image')) : ?>style="max-height:<?php the_sub_field('max_height_on_image'); ?>px;"<?php endif; ?> />
+                          <?php endif; ?>
  														<h1><?php the_sub_field('headline'); ?></h1>
  														<p><?php the_sub_field('text'); ?></p>
  														<?php if(get_sub_field('button_url')) { ?>
@@ -35,7 +39,9 @@
  														<?php if($icon) : ?>
  																<img src="<?php echo $icon['url']; ?>" <?php if(get_sub_field('max_height_on_image')) : ?>style="max-height:<?php the_sub_field('max_height_on_image'); ?>px;"<?php endif; ?> />
  														<?php endif; ?>
-                            <h4 class="subtitle">Helping Hand Project at</h4>
+                              <?php if( get_sub_field('chapter') ): ?>
+                                <h4 class="subtitle"><?php the_sub_field('chapter_subtitle'); ?></h4>
+                              <?php endif; ?>
  														<?php if(get_sub_field('headline')) : ?>
  																<h1 class="title"><?php the_sub_field('headline'); ?></h1>
  														<?php endif; ?>
@@ -53,7 +59,7 @@
  										</div>
  								</section>
               <?php elseif (get_row_layout() == 'call_to_action' ): ?>
-                  <section class="call_to_action">
+                  <section class="call_to_action" style="background-color:<?php the_sub_field('background_color'); ?>">
                       <div class="container">
                         <div class="left_text_container">
                           <h2><?php the_sub_field('headline'); ?></h2>
@@ -67,25 +73,26 @@
                       </div>
                   </section>
  						<?php elseif (get_row_layout() == 'contact_form' ): ?>
- 								<section class="contact_form">
+              <?php $background_image = get_sub_field('image'); ?>
+ 								<section class="contact_form"  style="background-image:url(<?php echo $background_image['url']; ?>);">
+
  										<div class="container">
  											<div class="left-contact-col">
- 													<h2><?php the_sub_field('title'); ?></h2>
+ 													<h2><?php the_sub_field('headline'); ?></h2>
  													<p><?php the_sub_field('text'); ?></p>
- 													<div class="interior-col left">
- 														<h4>PHONE</h4>
- 														<p><?php the_sub_field('phone'); ?></p>
- 													</div>
- 													<div class="interior-col right">
- 														<h4>EMAIL</h4>
- 														<p><?php the_sub_field('email'); ?></p>
- 													</div>
+                          <p><i class="fa fa-map-pin" aria-hidden="true"></i> <?php the_sub_field('address'); ?><p>
+                          <p><i class="fa fa-phone" aria-hidden="true"></i> <?php the_sub_field('phone'); ?></p>
+                          <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <?php the_sub_field('email'); ?><p>
+                            <div class="social-icons">
+                              <i class="fa fa-facebook" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-youtube" aria-hidden="true"></i>
+                            </div>
  											</div>
  											<div class="right-contact-col">
  											<?php the_sub_field('contact_form'); ?>
  										</div>
  									</div>
- 								</section>
+
+ 							</section>
  						<?php elseif (get_row_layout() == 'slideshow' ): ?>
  								<section class="slideshow">
  										<?php echo do_shortcode(get_sub_field('slider')); ?>
@@ -197,120 +204,92 @@
  									</div>
  								</section>
  							</div>
- 						<?php elseif (get_row_layout() == 'callout_blocks' ): ?>
- 								<?php if( have_rows('block_collection') ): ?>
- 										<section class="text-callout center-text">
-
- 												<?php while( have_rows('block_collection') ): the_row(); ?>
- 														<?php $block_icon = get_sub_field('block_icon'); ?>
- 														<div class="text-callout-block">
- 																<?php if(get_sub_field('block_url')) { ?>
- 																		<a href="<?php the_sub_field('block_url'); ?>" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>>
- 																				<div class="text-container">
- 																						<div class="middle">
- 																								<img src="<?php echo $block_icon['url']; ?>">
- 																								<h4><?php the_sub_field('block_text'); ?></h4>
- 																						</div>
- 																				</div>
- 																		</a>
- 																<?php } else { ?>
- 																		<div class="text-container">
- 																				<div class="middle">
- 																						<img src="<?php echo $block_icon['url']; ?>">
- 																						<h4><?php the_sub_field('block_text'); ?></h4>
- 																				</div>
- 																		</div>
- 																<?php } ?>
- 														</div>
- 												<?php endwhile; ?> <!-- block collection while -->
-
- 										</section>
- 								<?php endif; ?> <!-- block collection if -->
- 						<?php elseif (get_row_layout() == 'quarter_blocks' ): ?>
- 								<?php if( have_rows('block') ): $i = 0; ?>
- 										<section class="quarter-block">
- 												<?php while( have_rows('block') ): $i++; the_row(); ?>
- 														<?php if (get_sub_field('block_type') == 'Full Image') { ?>
- 																<div class="block bg-image" style="background-image:url(<?php the_sub_field('bgimage'); ?>);">
- 																		<?php if(get_sub_field('link_url')) { ?>
- 																				<a href="<?php the_sub_field('link_url'); ?>" class="a-<?php echo $i; ?>" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>>
- 																						<div class="image-container">
- 																								<div class="middle">
- 																										<?php if(get_sub_field('text')) { ?>
- 																												<h4><?php the_sub_field('text'); ?></h4>
- 																										<?php } ?>
- 																										<?php if(get_sub_field('button_text')) { ?>
- 																												<span class="btn"><?php the_sub_field('button_text'); ?> <i class="fa fa-arrow-right"></i></span>
- 																										<?php } ?>
- 																								</div>
- 																						</div>
- 																				</a>
- 																		<?php } ?>
- 																</div>
- 																<?php if(get_sub_field('hover_background_color')) { ?>
- 																		<style>
- 																				.a-<?php echo $i; ?>:hover {
- 																						background-color:<?php the_sub_field('hover_background_color'); ?>;
- 																				}
- 																		</style>
- 																<?php } ?>
- 														<?php } else if (get_sub_field('block_type') == 'Logo') { ?>
- 																<div class="block logo" style="background-color:<?php the_sub_field('background_color'); ?>;">
- 																		<?php if(get_sub_field('link_url')) { ?>
- 																				<a href="<?php the_sub_field('link_url'); ?>" class="a-<?php echo $i; ?>" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>>
- 																						<div class="image-container">
- 																								<div class="middle">
- 																										<img src="<?php the_sub_field('logo'); ?>" />
- 																										<img src="<?php the_sub_field('hover_logo'); ?>" class="hover" />
- 																										<?php if(get_sub_field('button_text')) { ?>
- 																												<span class="btn"><?php the_sub_field('button_text'); ?> <i class="fa fa-arrow-right"></i></span>
- 																										<?php } ?>
- 																								</div>
- 																						</div>
- 																				</a>
- 																				<?php if(get_sub_field('hover_background_color')) { ?>
- 																						<style>
- 																								.a-<?php echo $i; ?>:hover {
- 																										background-color:<?php the_sub_field('hover_background_color'); ?>;
- 																								}
- 																						</style>
- 																				<?php } ?>
- 																		<?php } else { ?>
- 																				<div class="image-container">
- 																						<div class="middle">
- 																								<img src="<?php the_sub_field('logo'); ?>"/>
- 																						</div>
- 																				</div>
- 																		<?php } ?>
- 																</div>
- 														<?php } else if (get_sub_field('block_type') == 'Text') { ?>
- 																<div class="block text" style="background-color:<?php the_sub_field('background_color'); ?>;">
- 																		<?php if(get_sub_field('link_url')) { ?>
- 																				<a href="<?php the_sub_field('link_url'); ?>" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>>
- 																						<div class="text-container">
- 																								<div class="middle">
- 																										<?php if(get_sub_field('icon')): ?>
- 																												<img src="<?php the_sub_field('icon'); ?>" />
- 																										<?php endif; ?>
- 																										<h4><?php the_sub_field('text'); ?></h4>
- 																								</div>
- 																						</div>
- 																				</a>
- 																		<?php } else { ?>
- 																				<div class="text-container">
- 																						<div class="middle">
- 																								<?php if(get_sub_field('icon')): ?>
- 																										<img src="<?php the_sub_field('icon'); ?>" />
- 																								<?php endif; ?>
- 																								<?php the_sub_field('text'); ?>
- 																						</div>
- 																				</div>
- 																		<?php } ?>
- 																</div>
- 														<?php } ?>
- 												<?php endwhile; ?> <!-- block collection while -->
- 										</section>
- 								<?php endif; ?> <!-- block -->
+            <?php elseif (get_row_layout() == 'callout_blocks' ): ?>
+                <?php if( have_rows('block_collection') ): ?>
+                    <section class="text-callout center-text">
+                        <?php while( have_rows('block_collection') ): the_row(); ?>
+                            <?php $block_icon = get_sub_field('block_icon'); ?>
+                            <div class="text-callout-block"><a href="<?php the_sub_field('block_url'); ?>">
+                                <div class="text-container">
+                                    <div class="middle">
+                                        <img src="<?php echo $block_icon['url']; ?>">
+                                        <h3><?php the_sub_field('block_headline'); ?></h3>
+                                        <p><?php the_sub_field('block_text'); ?></p>
+                                        <?php if(get_sub_field('button_url')) { ?>
+                                            <div class="btn" <?php if(get_sub_field('target_blank')) { ?>target="_blank"<?php } ?>><?php the_sub_field('button_text'); ?> <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        <?php endwhile; ?> <!-- block collection while -->
+                    </section>
+                <?php endif; ?> <!-- block collection if -->
+              <?php elseif (get_row_layout() == 'quarter_blocks' ): ?>
+                 <?php if( have_rows('block') ): $i = 0; ?>
+                     <section class="quarter-block">
+                       <div class="container">
+                           <?php while( have_rows('block') ): $i++; the_row(); ?>
+                               <?php if (get_sub_field('block_type') == 'Full Image') { ?>
+                                   <div class="block bg-image" style="background-image:url(<?php the_sub_field('bgimage'); ?>);"></div>
+                               <?php } else if (get_sub_field('block_type') == 'Logo') { ?>
+                                   <div class="block logo" style="background-color:<?php the_sub_field('background_color'); ?>;">
+                                       <?php if(get_sub_field('link_url')) { ?>
+                                           <a href="<?php the_sub_field('link_url'); ?>" class="a-<?php echo $i; ?>">
+                                               <div class="image-container">
+                                                   <div class="middle">
+                                                       <img src="<?php the_sub_field('logo'); ?>" />
+                                                       <img src="<?php the_sub_field('hover_logo'); ?>" class="hover" />
+                                                       <?php if(get_sub_field('button_text')) { ?>
+                                                           <span class="btn"><?php the_sub_field('button_text'); ?> <i class="fa fa-arrow-right"></i></span>
+                                                       <?php } ?>
+                                                   </div>
+                                               </div>
+                                           </a>
+                                           <?php if(get_sub_field('hover_background_color')) { ?>
+                                               <style>
+                                                   .a-<?php echo $i; ?>:hover {
+                                                       background-color:<?php the_sub_field('hover_background_color'); ?>;
+                                                   }
+                                               </style>
+                                           <?php } ?>
+                                       <?php } else { ?>
+                                           <div class="image-container">
+                                               <div class="middle">
+                                                   <img src="<?php the_sub_field('logo'); ?>"/>
+                                               </div>
+                                           </div>
+                                       <?php } ?>
+                                   </div>
+                               <?php } else if (get_sub_field('block_type') == 'Text') { ?>
+                                   <div class="block text" style="background-color:<?php the_sub_field('background_color'); ?>;">
+                                       <?php if(get_sub_field('link_url')) { ?>
+                                           <a href="<?php the_sub_field('link_url'); ?>">
+                                               <div class="text-container">
+                                                   <div class="middle">
+                                                       <?php if(get_sub_field('icon')): ?>
+                                                           <img src="<?php the_sub_field('icon'); ?>" />
+                                                       <?php endif; ?>
+                                                       <h2><?php the_sub_field('text'); ?></h2>
+                                                   </div>
+                                               </div>
+                                           </a>
+                                       <?php } else { ?>
+                                           <div class="text-container">
+                                               <div class="middle">
+                                                   <?php if(get_sub_field('icon')): ?>
+                                                       <img src="<?php the_sub_field('icon'); ?>" />
+                                                   <?php endif; ?>
+                                                   <h2><?php the_sub_field('text'); ?></h2>
+                                               </div>
+                                           </div>
+                                       <?php } ?>
+                                   </div>
+                               <?php } ?>
+                           <?php endwhile; ?> <!-- block collection while -->
+                         </div>
+                     </section>
+                 <?php endif; ?> <!-- block -->
  							<?php elseif (get_row_layout() == 'three_column_text' ): ?>
  									<?php if( have_rows('text') ): $i = 0; ?>
  											<section class="three_column_text">
