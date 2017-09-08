@@ -51,6 +51,10 @@
             font-size: 13px;
             letter-spacing: 1px;
           }
+          &:hover > ul{
+            top: 50px;
+            background: #000;
+          }
         }
       }
     }
