@@ -75,7 +75,6 @@
  						<?php elseif (get_row_layout() == 'contact_form' ): ?>
               <?php $background_image = get_sub_field('image'); ?>
  								<section class="contact_form"  style="background-image:url(<?php echo $background_image['url']; ?>);">
-
  										<div class="container">
  											<div class="left-contact-col">
  													<h2><?php the_sub_field('headline'); ?></h2>
@@ -88,6 +87,7 @@
                             </div>
  											</div>
  											<div class="right-contact-col">
+                        <h2>SEND US A MESSAGE</h2>
  											<?php the_sub_field('contact_form'); ?>
  										</div>
  									</div>
